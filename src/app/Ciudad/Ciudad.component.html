@@ -1,0 +1,73 @@
+
+<h1>PROYECTO</h1>
+
+<!-- INPUT PARA INGRESAR CIUDAD -->
+<div>
+  <input type="text" [(ngModel)]="nombre" placeholder="Nombre Ciudad">  
+</div>
+
+<br><br>
+
+<!-- BOTON PARA OBTENER ESTADO DEL TIEMPO ACTUAL -->
+<div class="container">
+    <button type="button" (click)="getSer() " class="btn btn-success">            
+        Ver tiempo actual
+    </button>                    
+  </div>
+
+  <br><br>
+
+  <button type="button" (click)="clear() " class="btn btn-success">            
+      Clear
+  </button>  
+
+<!-- BOTON PARA ESTAD DEL TIEMPO A 5 DIAS -->
+<div class="container">
+  <button type="button" (click)="getServi() " class="btn btn-success">            
+      Ver tiempo a 5 dias
+  </button>                    
+</div>
+
+
+<!-- OBTENER NOMBRE CIUDAD ACTUAL-->
+<div *ngIf="tiempo">
+    <h1>{{tiempo.name}}</h1>
+  </div>
+
+
+<!-- OBTENER ESTADO DEL TIEMPO ACTUAL -->
+<div *ngIf="tiempo" class="col-4">
+  <P>{{tiempo.main.temp}} °C</P>
+</div>
+
+
+<!-- OBTENER NOMBRE CIUDAD POR 5 DIAS-->
+<div *ngIf="tiempos">
+    <h1>{{tiempos.city.name}}</h1>
+  </div>
+
+<!-- OBTENER ESTADO DEL TIEMPO A 5 DIAS -->
+<div class="container mt-2">
+  <div class="row">
+      <div *ngIf="tiempos" class="col-4">
+          <h2>Dia 1</h2>
+          <p>{{tiempos.list[0].main.temp}} °C</p>
+        </div>
+      <div *ngIf="tiempos" class="col-2">
+          <h2>Dia 2</h2>
+          <p>{{tiempos.list[1].main.temp}} °C</p>
+      </div>
+      <div *ngIf="tiempos" class="col-2">
+          <h2>Dia 3</h2>
+          <p>{{tiempos.list[2].main.temp}} °C</p>
+      </div>
+      <div *ngIf="tiempos" class="col-2">
+          <h2>Dia 4</h2>
+          <p>{{tiempos.list[3].main.temp}} °C</p>
+      </div>
+      <div *ngIf="tiempos" class="col-2">
+          <h2>Dia 5</h2>
+          <p>{{tiempos.list[4].main.temp}} °C</p>
+      </div>
+  </div>
+</div>
