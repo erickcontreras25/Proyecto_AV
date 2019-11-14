@@ -17,7 +17,8 @@ export class CiudadComponent implements OnInit {
   tiempos: any;
   tiempo: any;
   nombre: string = '';
-  aux;
+  aux: string = 'rain';
+  img = document.createElement("img");
 
   constructor(protected servi: ServicesService) { }
 
@@ -41,7 +42,6 @@ export class CiudadComponent implements OnInit {
     this.servi.get(this.nombre).subscribe(
       data => {
         this.tiempo = data,
-        this.estados();
         console.log(data);
       }, error => {
         this.erro();
@@ -50,21 +50,17 @@ export class CiudadComponent implements OnInit {
   }
 
 
-  erro(){
+
+  erro() {
     console.log(error),
         window.alert('POR FAVOR INGRES EL NOMBRE CORRECTAMENTE');
   }
 
-  clear(){
+  clear() {
     this.nombre = '';
     this.tiempo = '';
     this.tiempos = '';
   }
 
-  estados(){
-    if(this.aux === 'rain'){
-      this.aux = '';
-    }
-  }
 
 }
