@@ -17,6 +17,7 @@ export class CiudadComponent implements OnInit {
   tiempos: any;
   tiempo: any;
   nombre: string = '';
+  aux;
 
   constructor(protected servi: ServicesService) { }
 
@@ -39,7 +40,9 @@ export class CiudadComponent implements OnInit {
   getSer(){
     this.servi.get(this.nombre).subscribe(
       data => {
-        this.tiempo = data;
+        this.tiempo = data,
+        this.estados();
+        console.log(data);
       }, error => {
         this.erro();
       }
@@ -56,6 +59,12 @@ export class CiudadComponent implements OnInit {
     this.nombre = '';
     this.tiempo = '';
     this.tiempos = '';
+  }
+
+  estados(){
+    if(this.aux === 'rain'){
+      this.aux = '';
+    }
   }
 
 }

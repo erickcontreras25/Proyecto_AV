@@ -17,6 +17,8 @@
 
   <br><br>
 
+
+  <!-- BOTON PARA LIMPIAR -->
   <button type="button" (click)="clear() " class="btn btn-success">            
       Clear
   </button>  
@@ -32,12 +34,14 @@
 <!-- OBTENER NOMBRE CIUDAD ACTUAL-->
 <div *ngIf="tiempo">
     <h1>{{tiempo.name}}</h1>
+    
   </div>
 
 
 <!-- OBTENER ESTADO DEL TIEMPO ACTUAL -->
 <div *ngIf="tiempo" class="col-4">
   <P>{{tiempo.main.temp}} °C</P>
+  aux = {{tiempo.weather.main}}
 </div>
 
 
