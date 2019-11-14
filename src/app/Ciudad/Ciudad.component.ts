@@ -17,8 +17,6 @@ export class CiudadComponent implements OnInit {
   tiempos: any;
   tiempo: any;
   nombre: string = '';
-  aux: string = 'rain';
-  img = document.createElement("img");
 
   constructor(protected servi: ServicesService) { }
 
@@ -38,7 +36,7 @@ export class CiudadComponent implements OnInit {
       );
   }
 
-  getSer(){
+  getSer() {
     this.servi.get(this.nombre).subscribe(
       data => {
         this.tiempo = data,

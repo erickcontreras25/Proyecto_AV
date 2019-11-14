@@ -16,7 +16,7 @@ getServi(nombre: string) {
   return this.servi.get(`${this.urlForecast}q=${nombre}&units=metric&cnt=5&APPID=2ebb8d634e6ad8b6841eb487bcd37103`);
 }
 
-get(nombre: string) { 
+get(nombre: string) {
   return this.servi.get(`${this.urlWeather}q=${nombre}&units=metric&APPID=2ebb8d634e6ad8b6841eb487bcd37103`);
 }
 

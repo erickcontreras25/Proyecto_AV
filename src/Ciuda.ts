@@ -1,6 +1,6 @@
 export class Ciuda {
-    id : string;
-    name : string;
+    id: string;
+    name: string;
 
 
     constructor(id: string, nombre: string){
